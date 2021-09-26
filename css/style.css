@@ -1,0 +1,421 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.clear{
+    clear: both;
+}
+a{
+    text-decoration: none;
+}
+
+body{ font-family: 'Varela Round', sans-serif;
+}
+.container{
+    width: 80%;
+    margin: auto;
+   
+}
+.pd-y{
+    padding: 120px 0;
+}
+.ltr-effect{position: relative;}
+
+.ltr-effect:after{
+    position: absolute;
+    content: "";
+    width: 0% ;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: #130e0e;
+    transition: width 0.5s;
+}
+.ltr-effect:hover:after{
+    width: 100% ;
+}
+/*************** section header*******************/
+.section-header{
+    text-align: center;
+    
+}
+.section-header .section-title{
+    font-size: 35px;
+    text-transform: capitalize;
+    margin-bottom: 7px;
+}
+.section-header .line{
+    display: block;
+    height: 5px;
+    width: 60px;
+    background-color: #6195ff;
+    margin: 0px auto 70px auto;
+    
+}
+/*************** end header*******************/
+/***************header*******************/
+.header{
+    
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.header .logo {
+    width: 40%;
+    height: 10px;
+    padding-top: 5px;
+   
+    float: left;
+}
+.header .logo img{
+    width: 30%;
+}
+.header .nav {
+    width: 60%;
+    list-style: none; float: left;
+    text-align: right;
+    
+}
+.header .nav > li{
+    display: inline-block;
+    text-align: center;
+}
+.header .nav >li> a{
+    
+    font-size: 14px;
+    color: white;
+    display: block;
+    padding: 30px 13px;
+}
+.header .nav> li> a:after {
+    width: 0%;
+}
+.header .nav >li> a:after , .header .nav >li> a.active:after{
+content: "";
+display: block;
+height: 3px;
+background-color: #6195ff;
+border-radius: 3px;
+transition: width 0.4s;
+margin-top: 2px;
+}
+.header .nav > li> a.active:after{
+     width: 100%;
+}
+    
+.header .nav >li> a:hover:after{
+    width: 100%;
+}
+
+
+.dropdown{
+    position: relative;
+}
+.dropdown-menu{
+    position: absolute;
+    background : #6195ff;
+    list-style: none;
+    width: 100px;
+    text-align: center;
+    left: -36%;
+    top: 70%; 
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+}
+ .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    
+}
+.dropdown-menu a{
+    color: white;
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+
+}
+/*************************** home section ******************/
+.home{
+    height: 100vh;
+    background-image: url(../images/background/background1.webp);
+     background-size: cover;
+     position: relative;
+}
+.overlay{
+position: absolute;
+height: 100%;
+width: 100%;
+top: 0;
+left: 0;
+ background-color:rgba(0, 0, 0, 0.5);
+}
+.hover-opacity{
+    transition: opacity 0.4s;
+}
+.hover-opacity:hover{
+    opacity: 0.7;
+}
+.home-content{
+    
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.home .title{
+    color: white;
+    size: 3.5rem;
+    text-transform: uppercase;
+}
+.home .home-desc{
+    
+    margin: 20px 0px;
+    color: white;
+    letter-spacing: 2px;
+    line-height: 1.5;
+
+}
+.home .btn{
+    min-width: 150px;
+    padding: 15px 0;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    font-size: 19px;
+}
+.home .btn-start{
+    margin-right: 10px;
+    background-color: white;
+}
+.home .btn-learn{
+    background-color: #6195ff;
+    color: white;
+}
+
+/******** about section ***/
+.about-content{
+    overflow: hidden;
+}
+.about-item{
+    width: 30%;
+    float: left;
+    text-align: center;
+    border: 1px solid #ded7d7 ;
+    padding: 50px 15px;
+
+}
+.about-item:hover .about-item-title{
+    color: white;
+}
+.about-item.mg{
+    margin: 0 5%;
+}
+.about-item .icon{
+    color: #6195ff;
+    margin-bottom: 10px;
+}
+.about-item-title{
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    transition: color 0.5s;
+}
+.about-item-desc{
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #899;
+}
+.about-item-link{
+    color: #6195ff;
+    text-transform: capitalize;
+}
+/******** end about section ***/
+
+/******** portfolio section ***/
+.portfolio{
+    background-color: #f9f9f9;
+}
+.portfolio-content{
+    overflow: hidden;
+}
+.portfolio-item{
+    position: relative;
+    width: 30%;
+    float: left;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+.portfolio-item .layer-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+}
+.portfolio-item:hover  .layer-content{
+    opacity: 1;
+    visibility: visible;
+}
+.portfolio-item img{
+    width: 100%;
+}
+.portfolio-item.mg{
+    margin: 0 5%;
+}
+.layer-content .layer-info{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    text-align: center;
+    transform: translate(-50% , -50%);
+}
+.layer-content .category{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #6195ff;
+    display: block;
+    margin-bottom: 5px;
+    position: relative;
+    top: 10px;
+    opacity: 0;
+    transition: top 0.5s, opacity 0.5s;
+    transition-delay: 0.2s;
+}
+.layer-content-title{
+    font-size: 26px;
+    color: white;
+    margin-bottom: 5px;
+    position: relative;
+    top: 10px;
+    opacity: 0;
+    transition: top 0.5s, opacity 0.5s;
+    transition-delay: 0.3s;
+
+
+}
+.layer-content a{
+   color: white;
+   position: relative;
+   top: 10px;
+   opacity: 0;
+   transition: top 0.5s , opacity 0.5s;
+   transition-delay: 0.3s;
+}
+.layer-content a i{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #6195ff;
+    line-height: 40px;
+}
+.portfolio-item:hover  .layer-content .category,
+ .portfolio-item:hover .layer-content-title,
+ .portfolio-item:hover .layer-content a{
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+}
+/******** offer section ***/
+.offer-content{
+    overflow: hidden;
+}
+.offer-item{
+    width: 30%;
+    float: left;
+    margin-bottom: 30px;
+    border: 1px solid #ded7d7 ;
+    padding: 35px 15px 30px 70px;
+    position: relative;
+}
+.offer-item:hover .offer-item-title{
+    color: white;
+}
+.offer-item.mg{
+    margin: 0 5%;
+}
+.offer-item .icon{
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    color: #6195ff;
+}
+.offer-item-title{
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    transition: color 0.5s;
+}
+.offer-item-desc{
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #899;
+}
+
+/******** numbers section ***/
+.numbers{
+    position: relative;
+    background-image: url(../images/background/background2.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 300px;
+}
+.numbers-items{
+    overflow: hidden;
+    margin: 100px 0;
+    
+}
+.number-item{
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+.number-item .icon{
+    color: #6195ff;
+    margin-bottom: 15px;
+
+}
+.number-item-title{
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 15px;
+
+}
+.number-item-text{
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******** fonts ***/
+h1,h2,h3,h4,h5,h6{
+    font-family: montserrat, sans-serif;
+}
+button {
+    font-family: inherit;
+}
+
